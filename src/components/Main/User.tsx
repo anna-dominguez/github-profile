@@ -17,7 +17,7 @@ interface UserProps {
 		followers: string;
 		following: string;
 		location: string;
-		website: string;
+		blog: string;
 		company: string;
 		twitter_username: string;
 	} | null;
@@ -81,11 +81,11 @@ const User = ({ user, isLoading }: UserProps) => {
 							</div>
 							<div
 								className={`flex gap-4 items-center ${
-									!user.website ? 'opacity-50' : ''
+									!user.blog ? 'opacity-50' : ''
 								}`}
 							>
 								<Website props="fill-greyBlue dark:fill-white" />
-								<p>{user.website || 'Not Available'}</p>
+								<p>{user.blog || 'Not Available'}</p>
 							</div>
 							<div
 								className={`flex gap-4 items-center ${
