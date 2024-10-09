@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer {
+  body {
+    @apply font-mono w-screen h-screen grid place-items-center text-greyBlue dark:text-white bg-lightGrey dark:bg-almostDark px-6 pt-8
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  header {
+    @apply font-bold mb-9
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  h1 {
+    @apply text-[#222731] dark:text-white
+  }
+
+  h2 {
+    @apply text-darkGrey dark:text-white font-bold
+  }
+
+  h3 {
+    @apply text-headingM text-blue
+  }
+
+  h4 {
+    @apply text-headingS text-grey dark:text-white
+  }
+
+  main {
+    @apply flex flex-col gap-4
+  }
+
+  .search {
+    @apply bg-lightestGrey dark:bg-darkBlue rounded-[15px] pl-4 md:pl-8 pr-[7px] md:pr-[10px] flex justify-between items-center gap-2 md:gap-6 cursor-pointer
+  }
+
+  .result {
+    @apply bg-lightestGrey dark:bg-darkBlue py-8 md:p-10 px-6 rounded-[15px] mb-8
   }
 }
