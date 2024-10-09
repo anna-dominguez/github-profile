@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 import Sun from '@/svg/Sun';
@@ -6,6 +7,14 @@ import Moon from '@/svg/Moon';
 
 const Header = () => {
 	const { systemTheme, theme, setTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null;
+
 	const currentTheme = theme === 'system' ? systemTheme : theme;
 
 	return (
