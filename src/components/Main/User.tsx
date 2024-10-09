@@ -20,7 +20,7 @@ interface UserProps {
 		website: string;
 		company: string;
 		twitter_username: string;
-	};
+	} | null;
 }
 
 const User = ({ user, isLoading }: UserProps) => {
